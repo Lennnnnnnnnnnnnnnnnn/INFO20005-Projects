@@ -1,0 +1,131 @@
+/* -------------    General    ------------- */
+body {
+    margin: 0;
+    background-color: #C0AF9F;
+}
+
+h1, h2, h3 {
+    justify-self: center;
+    color: #493B30;
+}
+
+h1 {
+    font-size: clamp(5rem, 5vw, 10rem);
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    margin-bottom: 30px;
+}
+h3 {
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 50px;
+}
+p {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    background-color: #D6CFC7;
+    border: none;
+    border-radius: 100px;
+    cursor:pointer;
+    width: 40%;
+    max-width: 400px;
+    height: 7vb;
+}
+
+.product-containers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    width: 100%;
+    justify-content: space-around;
+}
+
+/* -------------    Navigation Bar    ------------- */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  /* pushes icons to opposite ends */
+    width: 100%;
+    height: 12vh;
+}
+#menu-icon, #cart-icon {
+    align-items: flex-start;
+    width: 9vh;
+    height: 9vh;
+}
+#menu-icon {
+    align-items: start;
+}
+#cart-icon {
+    align-items: end;;
+}
+#search {
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-evenly;
+    background-color: #fff;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border: #493B30 4px solid;
+    width: 70%;
+    height: 4vh;
+
+}
+#search input {
+    border: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* -------------    HOME    ------------- */
+#hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 40px;
+}
+
+#hero-sec-description {
+    background-color: #5B4837;
+    opacity: 0.75;
+    border-radius: 20px;
+    padding: 20px;
+    border: #493B30 4px solid;
+    width: 80%;
+}
+#hero-sec-description p {
+    color: #fff;
+    margin: 0;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.view-cats, .view-dogs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 40px;
+    width: 60%;
+}
+
+.view-dogs button, .view-cats button {
+    width: 100%;
+}

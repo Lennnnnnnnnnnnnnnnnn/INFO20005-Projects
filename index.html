@@ -4,61 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="Home">
     <header>
         <nav>
-            <img src="images/Menu.svg" alt="Image of Menu button">
-            <img src="images/cart.svg" alt="Image of Cart button">
+            <img id="menu-icon" src="images/Menu.svg" alt="Image of Menu button">
             <div id="search">
-                <input id="search" name="search" type="text" placeholder="Search for products, animals and more...">
-                <img src="images/search.svg" alt="Image of Search button">
+                <input id="search-input" name="search" type="text" placeholder="Search for products...">
+                <img id="search-icon" src="images/search.svg" alt="Image of Search button">
             </div>
+            <img id="cart-icon" src="images/cart.svg" alt="Image of Cart button">
         </nav>
     </header>
 
     <main>
         <section id="hero-section">
-            <h1>VISCTORIA MARKET PETSHOP</h1>
+            <h1>VICTORIA MARKET PET SHOP</h1>
             <h3>Best out of Best</h3>
-            <div>
+            <div id="hero-sec-description">
                 <p>Welcome to Victoria Market Petshop, your one-stop destination for all premium pet foods!</p>
-                <div>
-                    <div>
+                <div class="button-container">
                         <button id="on-sale">On Sale</button>
                         <button id="top-selling">Top Selling</button>
-                    </div>
-                    <div>
                         <button id="dogs">Shop Dogs</button>
                         <button id="cats">Shop Cats</button>
-                    </div>
                 </div>
             </div>
         </section>
-        <section>
+
+        <section >
             <h2>Shop on Quality Products</h2>
-            <div class="view-all-products">
-                    <h3>Dogs</h3>
-                    <button>View All</button>
+            <div  class="product-containers">
+                <div class="view-dogs">
+                        <h3>Dogs</h3>
+                        <button>View All</button>
+                </div>
+                <div class="view-cats">
+                        <h3>Cats</h3>
+                        <button>View All</button>
+                </div>
             </div>
-            <div class="view-all-products">
-                    <h3>Cats</h3>
-                    <button>View All</button>
+
+            
+            <div class="brand-info">
+                <img src="images/Free_shipping_cart.svg" alt="cart icon">
+                <p>Free Shipping on Orders Over $50</p>
+            </div>        
+            <div class="brand-info">
+                <img src="images/directions_car.svg" alt="car icon">
+                <p>Fast & Reliable Delivery</p>
+            </div>        
+            <div class="brand-info">
+                <img src="images/Phone.svg" alt="phone icon">
+                <p>24/7 Customer Support</p>
             </div>
         </section>
-        <div>
-            <img src="images/Free_shipping_cart.svg" alt="cart icon">
-            <p>Free Shipping on Orders Over $50</p>
-        </div>        
-        <div>
-            <img src="images/directions_car.svg" alt="car icon">
-            <p>Fast & Reliable Delivery</p>
-        </div>        
-        <div>
-            <img src="images/Phone.svg" alt="phone icon">
-            <p>24/7 Customer Support</p>
-        </div>
+
+
         <img src="images/dog_cat_img1.svg" alt="dog and cat cuddling image">
     </main>
 
