@@ -56,56 +56,38 @@ button {
 
 /* -------------    Navigation Bar    ------------- */
 nav {
+    background: #938374;
+    padding: 10px 14px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 6vh;
     align-items: center;
-    padding: 5px;
-    border-bottom: #000000 2px solid;
-    background-color: #f0ebe1;
+    gap: 8px;
+    border-bottom: 1px solid #d6cfc2;
+}
 
-}
-#menu-icon, #cart-icon {
-    width: 4vh;
-    height: 4vh;
-    margin:20px
-}
-#menu-icon {
-    justify-self: start;
-}
-#cart-icon {
-    justify-self: end;
-}
 #search {
-    justify-self: center;
+    flex: 1;
     display: flex;
-    background-color: #fff9f93c;
-    border-radius: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    border: #080808 2px solid;
-    height: 2.5vh;
-
+    align-items: center;
+    background: #fff;
+    border-radius: 20px;
+    padding: 7px 12px;
+    margin: 0 8px;
+    border: 1px solid #d6cfc2;
 }
-#search input {
-    background-color: #00000000;
-    outline: none;
+
+#search-input {
+    flex: 1;
     border: none;
-    font-size: 16px;
-    width: 100%;
-    color: #FFF;
+    outline: none;
+    font-size: 12px;
+    color: #5a4e3e;
+    background: transparent;
 }
 
-    
-#search input::placeholder {
-    color: #35302c;   /* lighten this up — try #bbbbbb, #cccccc, etc. */
-}
-
-#search_icon {
-    color: #FFF;
+#menu-icon, #search-icon, #cart-icon {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
 }
 
 /* -------------    Footer Section    ------------- */
