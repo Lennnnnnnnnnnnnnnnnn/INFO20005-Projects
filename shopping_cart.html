@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img id="menu-icon" src="images/Menu.svg" alt="Image of Menu button">
+            <div id="search">
+                <input id="search-input" name="search" type="text" placeholder="Search for products...">
+                <img id="search-icon" src="images/search.svg" alt="Image of Search button">
+            </div>
+            <img id="cart-icon" src="images/cart.svg" alt="Image of Cart button">
+        </nav>
+    </header>
+
+    <main>
+        <!-- Cart Items -->
+        <section>
+            <h1>Total: 2 items</h1>
+
+            <article>
+                <input type="checkbox" name="select-item">
+                <img src="product-image.jpg" alt="Product Name">
+                <div>
+                    <h3>Product Name</h3>
+                    <p>Brief Description</p>
+                    <p>Quantity: x1</p>
+                    <p>$99.99</p>
+                </div>
+                <div>
+                    <a href="#">Edit</a>
+                    <a href="#">Remove</a>
+                </div>
+            </article>
+
+            <article>
+                <input type="checkbox" name="select-item">
+                <img src="product-image-2.jpg" alt="Product Name">
+                <div>
+                    <h3>Product Name</h3>
+                    <p>Brief Description</p>
+                    <p>Quantity: x1</p>
+                    <p>$99.99</p>
+                </div>
+                <div>
+                    <a href="#">Edit</a>
+                    <a href="#">Remove</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Order Summary -->
+        <section>
+            <p>2 Items Selected</p>
+            <div>
+                <span>Subtotal</span>
+                <span>$199.98</span>
+            </div>
+            <div>
+                <label for="order-note">Order Note</label>
+                <textarea id="order-note" name="order-note" rows="3"></textarea>
+            </div>
+            <button>Checkout Now</button>
+        </section>
+
+        <!-- Recommended Products -->
+        <section>
+            <h2>Recommended Products</h2>
+
+            <article>
+                <img src="dog-food.jpg" alt="Dog Food Product">
+                <div>
+                    <h3>Dog Food Product Name</h3>
+                    <p>$99.99</p>
+                    <del>$109.99</del>
+                </div>
+            </article>
+
+            <article>
+                <img src="cat-food.jpg" alt="Cat Food Product">
+                <div>
+                    <h3>Cat Food Product Name</h3>
+                    <p>$99.99</p>
+                    <del>$109.99</del>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <h3>About</h3>
+            <p>Locations:  Shop 11-12 F Shed Laneway Queen Victoria Market Melbourne, VIC 3000</p>
+            <p>Wechat Contact:  weimachongwudian</p>
+            <p>Phone Contact:  0432 715 529</p>
+        </div>
+        <div>
+            <h3>Customer Service</h3>
+            <p>My Account</p>
+            <p>Shipping & Returns</p>
+            <p>Privacy Policy</p>
+        </div>
+        <div>
+            <h3>VM PetShop</h3>
+            <p>2020 VM PetShop. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

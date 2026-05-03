@@ -3,9 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product_detail</title>
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <img id="menu-icon" src="images/Menu.svg" alt="Image of Menu button">
+            <div id="search">
+                <input id="search-input" name="search" type="text" placeholder="Search for products...">
+                <img id="search-icon" src="images/search.svg" alt="Image of Search button">
+            </div>
+            <img id="cart-icon" src="images/cart.svg" alt="Image of Cart button">
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Product Detail Section -->
+        <section>
+            <!-- Product Image with carousel -->
+            <div>
+            <img src="product-image.jpg" alt="Product Name">
+            <div>
+                <button>Prev</button>
+                <button>Next</button>
+            </div>
+            </div>
+
+            <!-- Product Info -->
+            <div>
+                <h1>Product Name</h1>
+                <p>$99.99</p>
+                <p>Type: Beef & Vegie</p>
+
+                <!-- Variants -->
+                <div>
+                    <button>Salmon</button>
+                    <button>Chicken</button>
+                    <button>Beef & Vegie</button>
+                </div>
+
+                <!-- Quantity + Add to Cart -->
+                <div>
+                    <button>-</button>
+                    <input type="number" value="1" min="1">
+                    <button>+</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accordion Sections -->
+        <section>
+            <details>
+                <summary>Ingredients</summary>
+                <p>Ingredients details go here.</p>
+            </details>
+            <details>
+                <summary>Description</summary>
+                <p>Product description goes here.</p>
+            </details>
+        </section>
+
+        <!-- Related Products -->
+        <section>
+            <h2>Related Products</h2>
+            <article>
+            <img src="related-product.jpg" alt="Dog Food Product">
+            <div>
+                <h3>Dog Food Product Name</h3>
+                <p>$99.99</p>
+                <del>$109.99</del>
+            </div>
+            </article>
+        </section>
+
+    </main>
+    <footer>
+        <div>
+            <h3>About</h3>
+            <p>Locations:  Shop 11-12 F Shed Laneway Queen Victoria Market Melbourne, VIC 3000</p>
+            <p>Wechat Contact:  weimachongwudian</p>
+            <p>Phone Contact:  0432 715 529</p>
+        </div>
+        <div>
+            <h3>Customer Service</h3>
+            <p>My Account</p>
+            <p>Shipping & Returns</p>
+            <p>Privacy Policy</p>
+        </div>
+        <div>
+            <h3>VM PetShop</h3>
+            <p>2020 VM PetShop. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
