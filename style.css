@@ -213,4 +213,44 @@ footer p {
 
 .view-dogs button, .view-cats button {
     width: 100%;
+/* Carousel */
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.carousel-btn {
+    background: rgba(59, 48, 39, 0.12);
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+    color: #3b3027;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #b0a898;
+}
+
+.dot-active {
+    background: #3b3027;
+    width: 14px;
+    border-radius: 4px;
+}
 }
