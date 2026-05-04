@@ -1,7 +1,7 @@
 /* -------------    General    ------------- */
 body {
     margin: 0;
-    background-color: #f0ebe1;
+    background-color: #f1ebdd;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,6 +9,7 @@ body {
 
 main {
     flex: 1;
+    margin: 10px;
 }
 
 h1, h2, h3 {
@@ -17,7 +18,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: clamp(3rem, 5vw, 7rem);
+    font-size: clamp(3rem, 5vw, 5rem);
     margin-bottom: 20px;
 }
 h2 {
@@ -48,10 +49,11 @@ button {
 
 .product-containers {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;    
     width: 100%;
     justify-content: space-around;
+    gap: 20px;
 }
 
 /* -------------    Navigation Bar    ------------- */
@@ -63,7 +65,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 8px;
-    border-bottom: 1px solid #d6cfc2;
+    justify-content: space-around;
 }
 
 #search {
@@ -71,24 +73,32 @@ nav {
     display: flex;
     align-items: center;
     background: #fff;
-    border-radius: 20px;
-    padding: 7px 12px;
+    border-radius: 10px;
+    padding: 5px 12px;
     margin: 0 8px;
     border: 1px solid #d6cfc2;
+    max-width: 50%;
 }
 
 #search-input {
     flex: 1;
     border: none;
     outline: none;
-    font-size: 12px;
+    font-size: 15px;
     color: #5a4e3e;
     background: transparent;
 }
 
-#menu-icon, #search-icon, #cart-icon {
-    width: 22px;
-    height: 22px;
+#menu-icon, #cart-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#search-icon {
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
     cursor: pointer;
 }
 
@@ -143,13 +153,13 @@ footer p {
             to bottom,
             #00000065 0%,       /* black transparent from the top */
             #00000065 60%,      /* holds the same black transparent until 80% */
-            #c0af9f 100%        /* fades into warm color at the bottom */
+            #f0ebe1 100%        /* fades into warm color at the bottom */
         ),
         url('images/Dog_Cat_warm_color.jpg');
     background-size: cover;
+    background-position: center;
 }
-#Home header h1, h2, h3{
-
+#Home header h1, #Home header h3{
     color: #FFF;
 }
 
@@ -175,7 +185,7 @@ footer p {
     width: 80%;
 }
 #hero-sec-description p {
-    color: #fff;
+    color: #FFF;
     margin: 0;
 }
 
@@ -186,17 +196,75 @@ footer p {
     justify-content: space-around;
     
 }
-
-.view-cats, .view-dogs {
+.product-card{
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 40px;
-    width: 60%;
+    justify-content: space-between;
+    padding: 16px;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.product-card h3{
+    position: relative; /* sits above the overlay for contrast */
+    color: #FFF;
+    font-size: 22px;
+    font-weight: 700;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    margin: 0;
+}
+
+.view-dogs {
+    background-image: url('images/dogs_banner.jpg');
+}
+
+.view-cats {
+    background-image: url('images/cats_banner.jpg');
+
+}
+
+.view-dogs h3, .view-cats h3 {
+    color: #FFF;
+    font-size: 22px;
+    font-weight: 700;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    margin: 0;
 }
 
 .view-dogs button, .view-cats button {
-    width: 100%;
+    background: rgba(240, 235, 225, 0.9);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #3b3027;
+    cursor: pointer;
+}
+
+.brand-info {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    padding: 0 30px;
+    background-color: #9e9080;
+    margin: 20px;
+    gap: 20px;
 }
 
 /* -------------    Product List    ------------- */
@@ -205,8 +273,7 @@ footer p {
 /* Page Heading */
 .page-heading {
     text-align: center;
-    padding: 12px 14px 4px;
-}
+    margin: 0 0 40px;}
 
 .page-heading h1 {
     font-weight: 600;
@@ -245,7 +312,7 @@ footer p {
 .product-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 product columns */
-    gap: 10px;
+    gap: 20px;
     padding: 14px
 }
 
@@ -290,7 +357,7 @@ footer p {
 }
 
 .product-card-info h3 {
-    font-size: 12px;
+    font-size: clamp(1rem, 2vw, 2rem);
     font-weight: 600;
     color: #3b3027;
     margin-bottom: 4px;
@@ -298,13 +365,13 @@ footer p {
 }
 
 .price {
-    font-size: 13px;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     font-weight: 700;
     color: #3b3027;
 }
 
 .original-price {
-    font-size: 10px;
+    font-size: clamp(0.75rem, 1.25vw, 1rem);
     color: #9e9080;
     margin-left: 4px;
 }
@@ -392,4 +459,11 @@ footer p {
     background: #3b3027;
     width: 14px;
     border-radius: 4px;
+}
+
+.dots-bottom {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
 }
