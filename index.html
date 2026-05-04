@@ -4,43 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+
+    /* CSS */
     <link rel="stylesheet" href="style.css">
+    /* Google Fonts */
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Asul:wght@400;700&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
 
 <body id="Home">
     <header>
         <nav>
-            <a href="menu.html">
-                <img id="menu-icon" src="images/Menu.svg" alt="Image of Menu button">
-            </a>
-            <div id="search">
-                <input id="search-input" name="search" type="text" placeholder="Search for products...">
+            <p class="brand-logo">VM Pet Shop</p>
+            <div class="nav-icons">
+                <a href="menu.html">
+                    <img id="menu-icon" src="images/Menu.svg" alt="Menu button">
+                </a>
                 <a href="search.html">
-                    <img id="search-icon" src="images/search.svg" alt="Image of Search button">
+                    <img id="search-icon" src="images/Search.svg" alt="Search button">
+                </a>
+                <a href="shopping_cart.html">
+                    <img id="cart-icon" src="images/cart.svg" alt="Cart button">
                 </a>
             </div>
-            <a href="shopping_cart.html">
-                <img id="cart-icon" src="images/cart.svg" alt="Image of Cart button">
-            </a>
-        </nav>
-        <section id="hero-section">
-            <h1>VICTORIA MARKET PET SHOP</h1>
-            <h3>Best out of Best</h3>
-            <div id="hero-sec-description">
-                <p>Welcome to Victoria Market Petshop, your one-stop destination for all premium pet foods!</p>
-                <div class="button-container">
-                        <button id="on-sale">On Sale</button>
-                        <button id="top-selling">Top Selling</button>
-                        <button id="dogs">Shop Dogs</button>
-                        <button id="cats">Shop Cats</button>
-                </div>
-            </div>
-        </section>
 
+        </nav>
     </header>
 
     <main>
-        <section >
+        <section id="hero-section">
+            <h1>Best Pet Foods For Your Furry Friends</h1>
+            <h3>Best out of Best</h3>
+            <button id="top-selling" class="btn--hero-section">Shop Now on Top Selling!</button>
+        </section>
+
+        <section>
             <h2>Shop on Quality Products</h2>
             <div  class="product-containers">
                     <div class="product-card view-dogs">
