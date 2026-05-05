@@ -1,11 +1,12 @@
 /* -------------    General    ------------- */
 :root {
-    --white: #FFF;
-    --light-beige: #C0AF9F;
-    --grey-beige: #f0ebe3;
-    --dark-beige: #AA8F7A;
-    --darkest-beige: #4a3728;
-    --black: #0a0a0a;
+    --white: rgba(255, 255, 255, 1);
+    --light-beige: rgba(192, 175, 159, 1);
+    --grey-beige: rgba(240, 235, 227, 1);
+    --dark-beige: rgba(170, 143, 122, 1);
+    --darkest-beige: rgba(74, 55, 40, 1);
+    --black: rgba(10, 10, 10, 1);
+    --light-orange: rgba(255, 220, 180, 0.92);
 }
 
 body {
@@ -29,8 +30,11 @@ main {
 
 h1, h2, h3 {
     justify-self: center;
-    color: var(--dark-beige);
+    color: var(--darkest-beige);
     font-family: 'Asul', ;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 h1 {
@@ -39,7 +43,7 @@ h1 {
 
 }
 h2 {
-    font-size: clamp(1.5rem, 2vw, 3rem);
+    font-size: clamp(1.8rem, 2vw, 3rem);
     margin-bottom: 30px;
 }
 h3 {
@@ -123,10 +127,6 @@ nav a:visited {
     color: var(--black)
 }
 
-.btn--hero-section {
-    
-}
-
 
 /* -------------    Footer Section    ------------- */
 footer {
@@ -179,8 +179,10 @@ footer p {
 #Home #hero-section {
     background: linear-gradient(
             to bottom,
-            #00000065 0%,       /* black transparent from the top */
-            #00000065 60%     /* fades into warm color at the bottom */
+            rgba(30,18,10,0.15) 0%,
+            rgba(30,18,10,0.05) 30%,
+            rgba(30,18,10,0.55) 65%,
+            rgba(20,12,6,0.82) 100%
         ),
         url('images/Dog_Cat_warm_color.jpg');
     background-size: cover;
@@ -190,8 +192,10 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;;
-    padding: 50px 55px;
+    justify-content: flex-end;   /* anchors content to bottom */
+    text-align: center;
+    padding: 0 28px 40px;
+    position: relative;
 }
 #hero-section h1, #hero-section h3{
     color: var(--white);
@@ -199,108 +203,188 @@ footer p {
 
 #hero-section h1{
     font-size: clamp(2.5rem, 3vw, 5rem);
-    margin-bottom: 20px;
-    max-width: 300px;
+    color: var(--white);
+    margin: 0 0 10px;
+    max-width: 290px;
     font-family: 'Asul', sans-serif;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
 }
 #hero-section h3{
-    font-size: clamp(2rem, 4vw, 5rem);
-    margin-bottom: 50px;
+    font-size: clamp(1.6rem, 4vw, 5rem);
+    color: var(--light-orange);
+    margin: 0 0 28px;
     font-family: 'WindSong', serif;
-    font-weight: 300;
+    font-weight: 400;
 }
 
-/* Product Category Cards */
-.product-card{
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    height: 220px;
+#Home h2 {
+    margin-top: 40px;
+}
+
+/* Category Cards (Home page — Cats / Dogs) */
+
+.product-containers {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-    background-size: cover;
-    background-position: center;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    gap: 20px;
 }
 
-.product-card::before{
+.category-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+}
+
+.category-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.15);
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.05) 40%,
+        rgba(0, 0, 0, 0.55) 100%
+    );
 }
 
-.product-card h3{
-    position: relative; /* sits above the overlay for contrast */
+.category-card.view-dogs {
+    background-image: url('images/category_card_dog.png');
+}
+
+.category-card.view-cats {
+    background-image: url('images/category_card_cat.png');
+}
+
+.card-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(6px);
+    border: 0.5px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 10px;
     color: var(--white);
-    font-size: 22px;
-    font-weight: 700;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    margin: 0;
+    letter-spacing: 0.06em;
+    font-family: 'Asul', sans-serif;
 }
 
-.view-dogs {
-    background-image: url('images/dogs_banner.jpg');
-}
-
-.view-cats {
-    background-image: url('images/cats_banner.jpg');
-
-}
-
-.view-dogs h3, .view-cats h3 {
-    color: var(--white);
-    font-size: 22px;
-    font-weight: 700;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    margin: 0;
-}
-
-#home-banner {
+.card-bottom {
+    position: relative;
+    z-index: 2;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    gap: 5px;
-    border-bottom: 2px solid var(--dark-beige);
+    justify-content: space-between;
+    width: 100%;
 }
 
-
-.banner-item {
+.card-text {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex: 1;
-    width: 100%;
-    height: 100px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-    position: relative;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 8px;
 }
 
-.banner-item img{
-    width: 40px;
-    height: 40px;
-    }
-
-.banner-item p{
-    align-self: baseline;
+.category-card h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    font-family: 'Asul', sans-serif;
+    text-shadow: 0 1px 6px rgba(74, 55, 40, 0.4);
+    line-height: 1;
 }
 
-.banner-item--last img{
-    width: 30px;
-    height: 30px;
-    padding-bottom: 10px;
-    padding-top: 5px;
+.card-sub {
+    font-size: 11px;
+    color: var(--light-orange);
+    margin: 5px 0 0;
+    font-family: 'Asul', sans-serif;
+}
+
+.category-card button {
+    background: var(--white);
+    color: var(--darkest-beige);
+    border: none;
+    border-radius: 50px;
+    padding: 9px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Asul', sans-serif;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 0;
+    height: auto;
+}
+
+/* Home Banner */
+
+#home-banner {
+  display: flex;
+  align-items: stretch;
+  margin: 0 -20px;;
+  background-color: var(--grey-beige);
+  border: 1px solid rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.banner-cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;   /* stacks icon above text */
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 6px;
+  text-align: center;
+}
+
+/* Divider between cells */
+.banner-cell + .banner-cell {
+  border-left: 1px solid rgba(0,0,0,0.08);
+}
+
+.b-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.b-icon img {
+  width: 25px;
+  height: 25px;
+}
+
+.b-title {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.b-sub {
+  font-size: 10px;
+  color: #777;
+  margin: 0;
+  line-height: 1.3;
 }
 
 .home-image-end {
