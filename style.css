@@ -5,6 +5,7 @@
     --grey-beige: #f0ebe3;
     --dark-beige: #AA8F7A;
     --darkest-beige: #4a3728;
+    --black: #0a0a0a;
 }
 
 body {
@@ -33,35 +34,36 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: clamp(2rem, 5vw, 7rem);
+    font-size: clamp(2rem, 2vw, 7rem);
     margin-bottom: 20px;
 
 }
 h2 {
-    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-size: clamp(1.5rem, 2vw, 3rem);
     margin-bottom: 30px;
 }
 h3 {
-    font-size: clamp(1.2rem, 4vw, 3rem);
+    font-size: clamp(1.2rem, 2vw, 3rem);
     margin-bottom: 50px;
 }
 p {
-    font-size: clamp(1.2rem, 2.5vw, 2rem);
-    font-family: 'Aref Ruqaa', serif;
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
+    font-family: 'Nunito', serif;
 }
 
 
 button {
     margin-top: 20px;
     padding: 10px 20px;
-    font-size: clamp(1.2rem, 2.5vw, 2rem);
-    background-color: var(--grey-beige);
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-family: "Nunito", serif;
+    background-color: var(--light-beige);
     border: none;
     border-radius: 10px;
     cursor:pointer;
     width: fit-content;
     max-width: 400px;
-    height: 7vb;
+    height: 50px;
 }
 
 
@@ -115,6 +117,15 @@ nav a:visited {
     color: inherit;
 }
 
+.brand-logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black)
+}
+
+.btn--hero-section {
+    
+}
 
 
 /* -------------    Footer Section    ------------- */
@@ -169,14 +180,13 @@ footer p {
     background: linear-gradient(
             to bottom,
             #00000065 0%,       /* black transparent from the top */
-            #00000065 60%,      /* holds the same black transparent until 80% */
-            var(--light-beige) 100%        /* fades into warm color at the bottom */
+            #00000065 60%     /* fades into warm color at the bottom */
         ),
         url('images/Dog_Cat_warm_color.jpg');
     background-size: cover;
     background-position: center;
     margin : 0 -20px;
-    height: 80vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,12 +198,13 @@ footer p {
 }
 
 #hero-section h1{
-    font-size: clamp(2.5rem, 2vw, 7rem);
+    font-size: clamp(2.5rem, 3vw, 5rem);
     margin-bottom: 20px;
     max-width: 300px;
+    font-family: 'Asul', sans-serif;
 }
 #hero-section h3{
-    font-size: clamp(2rem, 2vw, 4rem);
+    font-size: clamp(2rem, 4vw, 5rem);
     margin-bottom: 50px;
     font-family: 'WindSong', serif;
     font-weight: 300;
@@ -250,25 +261,46 @@ footer p {
     margin: 0;
 }
 
-.view-dogs button, .view-cats button {
-    background: rgba(240, 235, 225, 0.9);
-    border: none;
-    border-radius: 20px;
-    padding: 8px 0;
-    font-size: 14px;
-    color: var(--dark-beige);
-    cursor: pointer;
+#home-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 2px solid var(--dark-beige);
 }
 
-.brand-info {
+
+.banner-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    flex: 1;
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    position: relative;
+    padding: 20px 0;
     text-align: center;
-    justify-content: flex-start;
-    padding: 0 30px;
-    background-color: var(--light-beige);
-    margin: 20px;
-    gap: 20px;
+    font-size: 8px;
+}
+
+.banner-item img{
+    width: 40px;
+    height: 40px;
+    }
+
+.banner-item p{
+    align-self: baseline;
+}
+
+.banner-item--last img{
+    width: 30px;
+    height: 30px;
+    padding-bottom: 10px;
+    padding-top: 5px;
 }
 
 .home-image-end {
