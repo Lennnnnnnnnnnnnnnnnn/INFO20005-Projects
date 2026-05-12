@@ -18,29 +18,27 @@
     </header>
 
     <main>
-        <h1>Product Name</h1>
-
         <!-- Product Detail Section -->
         <section class="detail-content">
-            <!-- Product Image with carousel -->
+            <!-- Product Image -->
             <div class="product-img">
-                <img src="images/product_img/dog_food_1.png" alt="Product Name">
-                <div class="product-img-buttons">
-                    <button>Prev</button>
-                    <button>Next</button>
+                <img src="images/product_img/dog_food_1.png" alt="Pedigree Adult Dog Food">
+                <div class="enlarge-icon">
+                    <img src="images/icons/enlarge.png" alt="enlarge icon">
                 </div>
             </div>
 
             <!-- Product Info -->
             <div class="product-info">
-                <p>$99.99</p>
-                <p>Type: Beef & Vegie</p>
+                <h1>Pedigree Adult</h1>
+                <p class="price">$99.99</p>
+                <p class="size">Size: <strong>2kg</strong></p>
 
                 <!-- Variants -->
                 <div class="product-variants">
-                    <button>Salmon</button>
-                    <button>Chicken</button>
-                    <button>Beef & Vegie</button>
+                    <button>500g</button>
+                    <button>1kg</button>
+                    <button class="active">2kg</button>
                 </div>
             </div>
         </section>
@@ -48,12 +46,12 @@
         <!-- Quantity + Add to Cart -->
         <div class="add-cart-functions">
             <div class="quantity">
-                <button>-</button>
-                <input type="number" value="1" min="1">
-                <button>+</button>
+                <button id="qty-minus">-</button>
+                <input type="number" id="qty" value="1" min="1">
+                <button id="qty-plus">+</button>
             </div>
             <div class="add-button">
-                <button>Add to Cart</button>
+                <button id="add-to-cart">Add to Cart</button>
             </div>
         </div>
 
@@ -61,20 +59,20 @@
         <section class="product-description">
             <details>
                 <summary>Ingredients</summary>
-                <p>Ingredients details go here.</p>
+                <p>Chicken, whole grain corn, animal fat, natural flavours, vitamins &amp; minerals.</p>
             </details>
             <details>
                 <summary>Description</summary>
-                <p>Product description goes here.</p>
+                <p>Complete nutrition for adult dogs. Rich in protein with essential vitamins for a healthy coat and strong bones.</p>
             </details>
         </section>
 
         <!-- Related Products -->
-        <section>
+        <section class="related-products">
             <h2>Related Products</h2>
             <article class="product-card product-card-row">
                 <div class="product-card-img">
-                    <img src="dog-food.jpg" alt="Dog Food Product" >
+                    <img src="images/product_img/dog_food_1.png" alt="Dog Food Product">
                 </div>
                 <div class="product-card-info">
                     <h3>Dog Food Product Name</h3>
