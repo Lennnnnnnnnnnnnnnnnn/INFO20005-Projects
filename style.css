@@ -15,6 +15,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 header{
@@ -241,10 +242,9 @@ footer p {
 #Home #hero-section {
     background: linear-gradient(
             to bottom,
-            rgba(30,18,10,0.15) 0%,
-            rgba(30,18,10,0.05) 30%,
+            rgba(30,18,10,0.35) 0%,
             rgba(30,18,10,0.55) 65%,
-            rgba(20,12,6,0.82) 100%
+            rgba(20,12,6,1) 100%
         ),
         url('images/Dog_Cat_warm_color.jpg');
     background-size: cover;
@@ -452,20 +452,16 @@ footer p {
 
 @media (min-width: 1024px) {
     #Home main {
-        max-width: 1440px;
+        width: 100%;
         margin: 0 auto;
         padding: 0 60px;
+        box-sizing: border-box;
     }
 
     #Home #hero-section {
         height: 88vh;
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 0 100px;
+        margin: 0 -60px;
+        padding: 0 80px;
         /* directional gradient: dark left for text readability, clear right for image */
         background: linear-gradient(
             to right,
@@ -486,11 +482,15 @@ footer p {
         font-size: clamp(3.2rem, 4.5vw, 5.5rem);
         max-width: 520px;
         text-align: left;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     #Home #hero-section h3 {
         font-size: clamp(1.8rem, 2.5vw, 3rem);
         text-align: left;
+        margin-left: 0;
+        margin-right: 0;
         border-left: 4px solid var(--light-orange);
         padding-left: 16px;
         margin-bottom: 44px;
@@ -501,6 +501,7 @@ footer p {
         padding: 16px 44px;
         font-size: 1rem;
         letter-spacing: 0.02em;
+        margin-left: 0;
     }
 
     #Home h2 {

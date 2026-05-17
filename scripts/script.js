@@ -45,10 +45,7 @@ function initFooter() {
 // Fall back to previous page after closing menu 
 if (document.body.id === 'menu-page') {
     const closeBtn = document.querySelector('#menu-page > img');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => history.back());
-        closeBtn.style.cursor = 'pointer';
-    }
+    closeBtn.addEventListener('click', () => history.back());
 }
 
 // Wires up the +/- quantity buttons.
@@ -84,20 +81,6 @@ function initVariants() {
             // update label
             if (sizeLabel) sizeLabel.textContent = btn.textContent;
         });
-    });
-}
-
-// Wires up the Add to Cart button. On click, briefly flashes a lighter colour
-// to confirm the action, then reverts to the normal dark colour after 500ms.
-function initAddToCart() {
-    // check if add to cart button exists on this page
-    const addToCartBtn = document.getElementById('add-to-cart');
-    if (!addToCartBtn) return;
-
-    addToCartBtn.addEventListener('click', () => {
-        // add flash class then remove after 500ms
-        addToCartBtn.classList.add('btn-flash');
-        setTimeout(() => addToCartBtn.classList.remove('btn-flash'), 500);
     });
 }
 
@@ -212,6 +195,5 @@ initFooter();
 if (document.body.id === 'Product-detail') {
     initQuantity();
     initVariants();
-    initAddToCart();
     initImageZoom();
 }
