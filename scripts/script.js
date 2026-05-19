@@ -380,28 +380,72 @@ if (document.body.id === "cart-page") {
   }
 }
 
-function renderProductCard(product, category, index) {
+function renderProductCard(product, category, index, row = false) {
   const saleBadge = product.sale ? `<span class="sale-badge">SALE</span>` : "";
   const originalPrice = product.originalPrice
     ? `<del class="original-price">$${product.originalPrice.toFixed(2)}</del>`
     : "";
   return `
-        <a href="product_detail.html?category=${category}&index=${index}" class="product-card-link">
-            <article class="product-card">
+        <article class="product-card">
+            <a href="product_detail.html?category=${category}&index=${index}" class="product-card-img-link">
                 <div class="product-card-img">
                     <img src="${product.image}" alt="${product.name}">
                     ${saleBadge}
                 </div>
-                <div class="product-card-info">
-                    <h3>${product.name}</h3>
-                    <p>
-                        <span class="price">$${product.price.toFixed(2)}</span>
-                        ${originalPrice}
-                    </p>
+            </a>
+            <div class="product-card-right">
+                <a href="product_detail.html?category=${category}&index=${index}" class="product-card-link">
+                    <div class="product-card-info">
+                        <h3>${product.name}</h3>
+                        <p>
+                            <span class="price">$${product.price.toFixed(2)}</span>
+                            ${originalPrice}
+                        </p>
+                    </div>
+                </a>
+                <div class="card-btn-row">
+                    <a href="product_detail.html?category=${category}&index=${index}" class="card-view-btn">View Product</a>
+                    <button class="card-add-btn">Add to Cart</button>
                 </div>
-            </article>
-        </a>
+            </div>
+        </article>
     `;
+}
+
+/*-------------------------------------- On Sale --------------------------------------*/
+
+function initOnSalePage() {
+  const grid = document.getElementById("product-grid");
+  if (!grid) return;
+
+  // Gather all sale products across every category, preserving category + index for linking
+  const saleProducts = [];
+  for (const [category, list] of Object.entries(products)) {
+    list.forEach((product, index) => {
+      if (product.sale) {
+        saleProducts.push({ product, category, index });
+      }
+    });
+  }
+
+  // Sorts product via selected sort method from filter function
+  function render(sortValue) {
+    const sorted = [...saleProducts];
+    if (sortValue === "price-asc") {
+      sorted.sort((a, b) => a.product.price - b.product.price);
+    } else if (sortValue === "price-desc") {
+      sorted.sort((a, b) => b.product.price - a.product.price);
+    }
+
+    document.getElementById("product-count").textContent = `${sorted.length} Products`;
+    grid.innerHTML = sorted
+      .map(({ product, category, index }) => renderProductCard(product, category, index))
+      .join("");
+  }
+
+  render("default");
+
+  document.getElementById("sort-select").addEventListener("change", (e) => render(e.target.value));
 }
 
 /*-------------------------------------- Initializations --------------------------------------*/
@@ -424,4 +468,8 @@ if (document.body.id === "Product-detail") {
 
 if (document.body.id === "Product-list") {
   initProductList();
+}
+
+if (document.body.id === "on-sale-page") {
+  initOnSalePage();
 }
